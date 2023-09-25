@@ -15,11 +15,4 @@ public class Song extends Track {
     public void setLyrics(String lyrics) {
         this.lyrics = lyrics;
     }
-
-    @Override
-    public String toString() {
-        return "Song{" +
-                "lyrics='" + lyrics + '\'' +
-                '}';
-    }
 }

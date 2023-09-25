@@ -10,10 +10,10 @@ public class Album {
     private MusicStyle musicStyle;
     private List<Song> songs;
 
-    public Album(String name, MusicStyle musicStyle) {
+    public Album(String name, MusicStyle musicStyle, List<Song> songs) {
         this.name = name;
         this.musicStyle = musicStyle;
-        this.songs = new ArrayList<>();
+        this.songs = songs;
     }
 
     public String getName() {
