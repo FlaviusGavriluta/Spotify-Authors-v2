@@ -5,7 +5,6 @@ import org.example.model.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Spotify {
@@ -42,8 +41,8 @@ public class Spotify {
                         : author instanceof PodcastAuthor ?
                         ((PodcastAuthor) author).getPodcastList().stream()
                                 .map(Podcast::getName)
-                        : null)
-                .collect(Collectors.toList());
+                        : Stream.empty())
+                .toList();
     }
 
     public List<Track> findTop3MostListenedTracks() {
@@ -57,7 +56,7 @@ public class Spotify {
                 .sorted(Comparator.comparingInt(Track::getNumberOfTimesPlayed)
                         .reversed())
                 .limit(3)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public List<Author> getAuthors() {

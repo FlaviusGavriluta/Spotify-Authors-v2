@@ -11,29 +11,20 @@ public class Main {
         SpotifyService spotifyService = new SpotifyService();
         Spotify spotify = spotifyService.populateData();
 
-//        Track foundTrack = spotify.searchTrackByName("song3");
-//        System.out.println("Found track: " + foundTrack);
+        Track foundTrack = spotify.searchTrackByName("song3");
+        System.out.println("Found track: " + foundTrack);
 
-//        List<String> trackNames = spotify.listTracksByAuthor("Tom");
-//        System.out.println("Tracks by Tom: " + trackNames);
+        System.out.println("---------------------------------------");
 
-        Track foundTrack1 = spotify.searchTrackByName("song2");
-        foundTrack1.listenATrack();
-        foundTrack1.listenATrack();
-        foundTrack1.listenATrack();
-        foundTrack1.listenATrack();
-        foundTrack1.listenATrack();
+        List<String> trackNames = spotify.listTracksByAuthor("Tom");
+        System.out.println("Tracks by Tom: " + trackNames);
 
-        Track foundTrack2 = spotify.searchTrackByName("podcast1");
-        foundTrack2.listenATrack();
+        System.out.println("---------------------------------------");
 
-        Track foundTrack3 = spotify.searchTrackByName("song1");
-        foundTrack3.listenATrack();
-        foundTrack3.listenATrack();
-        foundTrack3.listenATrack();
-        foundTrack3.listenATrack();
-        foundTrack3.listenATrack();
-        foundTrack3.listenATrack();
+        spotify.searchTrackByName("song2").listenATrack(5);
+        spotify.searchTrackByName("podcast1").listenATrack(12);
+        spotify.searchTrackByName("song1").listenATrack(7);
+
 
         List<Track> top3MostListenedTracks = spotify.findTop3MostListenedTracks();
         System.out.println("The top 3 most listened tracks:");

@@ -14,8 +14,8 @@ public abstract class Track {
         this.numberOfTimesPlayed = 0;
     }
 
-    public void listenATrack() {
-        this.numberOfTimesPlayed++;
+    public void listenATrack(int times) {
+        this.numberOfTimesPlayed += times;
     }
 
     public int getId() {
